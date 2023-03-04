@@ -10,31 +10,42 @@ import {
 } from "./styles";
 
 import { ShoppingCart } from "phosphor-react";
+import formatMoney from "../../../../utils/formatMoney";
 
-export default function CoffeeCard() {
+export interface Coffee {
+  id: number;
+  tags: string[];
+  name: string;
+  description: string;
+  photo: string;
+  price: number;
+}
+
+interface CoffeeProps {
+  coffee: Coffee;
+}
+
+export default function CoffeeCard({ coffee }: CoffeeProps) {
+  const formattedPrice = formatMoney(coffee.price)
+
   return (
     <CoffeeCardContainer>
       <img
-        src="https://s3-alpha-sig.figma.com/img/55b1/f9ee/64600f98b2bae456b96fdc624c4b4f47?Expires=1678665600&Signature=k8VKVHILYiqREu5q~iln7daqRJJPd-Xv8~Bm~IwbRxO0RoALjNudlhvYoHcpEV8bToHcuQQ5TgleURrlvEjMdGuadmx~STRTpl65dfO21LxfAR9UYt7DXdEswQpp~1-cKuo2RbKdBmy9dCGuvoP3tkjVIcdOGQTeZHhjZoMh2uKKwri2C6PjNJT-coQnRvaw9C6EUU0xFxRZ0qc4yUHe5sEglW7nkONh4iAcGTF9Aon4xkPehZRjiSS3FA6dmloLCWeIBFa2n92pKWSpI2FvGMBpsctApXO0X8cu0muV-UoiW8CDYzQ2dVsR6m79PtGlrwKCcOePbJSTXZmmlJZf2g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+        src={`/coffees/${coffee.photo}`}
         alt="Xícara com café"
       />
 
-      <Tags>
-        <span>tradicional</span>
-        <span>com leite</span>
-      </Tags>
+      <Tags>{coffee.tags.map(tag => <span key={`${coffee.id}${tag}`}>{tag}</span>)}</Tags>
 
-      <Name>Expresso Tradicional</Name>
+      <Name>{coffee.name}</Name>
 
-      <Description>
-        O tradicional café feito com água quente e grãos moídos
-      </Description>
+      <Description>{coffee.description}</Description>
 
       <CardFooter>
         <div>
           <RegularText size="s">R$</RegularText>
           <TitleText size="m" color="text" as="strong">
-            9,90
+            {formattedPrice}
           </TitleText>
         </div>
 
