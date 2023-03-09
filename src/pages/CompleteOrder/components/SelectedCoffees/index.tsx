@@ -1,10 +1,10 @@
 import { TitleText } from "../../../../components/Typography";
 import { useCart } from "../../../../hooks/useCart";
-import CoffeeCartCard from "../CoffeeCartCard";
-import ConfirmationSection from "./ConfrimationSection";
+import { CoffeeCartCard } from "../CoffeeCartCard";
+import { ConfirmationSection } from "./ConfirmationSection";
 import { DetailsContainer, SelectedCoffeesContainer } from "./style";
 
-export default function SelectedCoffees() {
+export function SelectedCoffees() {
   const { cartItems } = useCart();
 
   return (

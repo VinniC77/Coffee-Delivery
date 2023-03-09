@@ -14,7 +14,7 @@ interface CoffeeCartCardProps {
   coffee: CartItem;
 }
 
-export default function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
+export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
   const { changeCartItemQuantity, removeCartItem } = useCart();
 
   function handleIncrease() {

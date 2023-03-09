@@ -3,7 +3,7 @@ import { coffees } from "../../../../data/coffees";
 import CoffeeCard from "../CoffeeCard";
 import { CoffeeList, OurCoffeesContainer } from "./styles";
 
-export default function OurCoffees() {
+export function OurCoffees() {
   return (
     <OurCoffeesContainer className="container">
       <TitleText size="l" color="subtitle">

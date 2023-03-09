@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <InputStyled {...props} ref={ref} />
           {rightText && <RightText>{rightText}</RightText>}
         </InputStyleContainer>
-        {error && <RegularText size="l">{error}</RegularText>}
+        {error && <RegularText size="s">{error}</RegularText>}
       </InputWrapper>
     );
   }

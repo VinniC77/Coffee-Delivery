@@ -6,7 +6,7 @@ import { ConfirmationSectionContainer } from "./style";
 
 const DELIVERY_PRICE = 3.5;
 
-export default function ConfirmationSection() {
+export function ConfirmationSection() {
   const { cartItemsTotal, cartQuantity } = useCart();
   const cartTotal = DELIVERY_PRICE + cartItemsTotal;
 

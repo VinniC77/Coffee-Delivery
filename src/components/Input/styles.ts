@@ -11,11 +11,11 @@ export const InputWrapper = styled.div`
   }
 `;
 
-interface InputStyleContainerProps {
+interface InputContainerProps {
   hasError: boolean;
 }
 
-export const InputStyleContainer = styled.div<InputStyleContainerProps>`
+export const InputStyleContainer = styled.div<InputContainerProps>`
   height: 2.625rem;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors["base-button"]};

@@ -1,16 +1,16 @@
 import { TitleText } from "../../../../components/Typography";
 import SectionTitle from "../SectionTitle";
-import { CompletedOrderFormContainer, FormSectionContainer } from "./styles";
+import { CompleteOrderFormContainer, FormSectionContainer } from "./styles";
 import { MapPinLine, CurrencyDollar } from "phosphor-react";
 import { useTheme } from "styled-components";
 import AddressForm from "./AddressForm";
 import PaymentMethodOptions from "./PaymentMethodOptions";
 
-export default function CompletedOrderForm() {
+export function CompleteOrderForm() {
   const { colors } = useTheme();
 
   return (
-    <CompletedOrderFormContainer>
+    <CompleteOrderFormContainer>
       <TitleText size="xs" color="subtitle">
         Complete seu pedido
       </TitleText>
@@ -23,7 +23,7 @@ export default function CompletedOrderForm() {
         <AddressForm />
       </FormSectionContainer>
 
-            <FormSectionContainer>
+      <FormSectionContainer>
         <SectionTitle
           title="Pagamento"
           subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
@@ -32,6 +32,6 @@ export default function CompletedOrderForm() {
 
         <PaymentMethodOptions />
       </FormSectionContainer>
-    </CompletedOrderFormContainer>
+    </CompleteOrderFormContainer>
   );
 }
